@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(VACUUM_CLEANER_CORE)
-
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_BUILD_TYPE DEBUG)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include_directories("./Vector2/")
 
@@ -17,9 +19,6 @@ add_subdirectory(Vector2)
 get_property(tSources GLOBAL PROPERTY SOURCES)
 get_property(tHeaders GLOBAL PROPERTY HEADERS)
 set(tSources "${tSources}Main.cpp;")
-message("${tSources}")
-message("${tHeaders}")
-message("${PROJECT_SOURCE_DIR}")
 
 add_executable(vacuum_cleaner ${tSources})
 target_link_libraries(vacuum_cleaner PUBLIC Vector2)
