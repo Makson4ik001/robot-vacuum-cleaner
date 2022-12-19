@@ -1,4 +1,0 @@
-﻿  Main.cpp
-C:\Users\USER\Desktop\robot vacuum cleaner\cleaner\Cleaner\Render\Renderer.h(7,72): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\USER\Desktop\robot vacuum cleaner\cleaner\Cleaner\Render\SimpleRenderer.h(6,64): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-  cleaner.vcxproj -> C:\Users\USER\Desktop\robot vacuum cleaner\cleaner\Debug\cleaner.exe
