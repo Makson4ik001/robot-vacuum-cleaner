@@ -1,30 +1,13 @@
 #include "Geometry.h"
 #define EPS 1e-11
-const double PI = acos(0) * 2;
+
 inline double fixZero(double d) {
   if (fabs(d) < EPS)
     d = 0;
   return d;
 }
 
-inline double fixAtan2(double d) {
-  d = fixZero(d);
-  if (d < 0)
-    return 2 * PI - d;
-  return d;
-}
 
-inline bool insideAngle(Vector2 &a, Vector2 &b, Vector2 &c, Vector2 &point) {
-  /*double alpha1 = fixZero(atan2(fixZero(a.y - point.y), fixZero(a.x -
-  point.x))), alpha2 = fixZero(atan2(fixZero(b.y - point.y), fixZero(b.x -
-  point.x))), alpha3 = fixZero(atan2(fixZero(c.y - point.y), fixZero(c.x -
-  point.x))); return  fixZero(fixAtan2(alpha2) - alpha1) > 0 && fixZero(alpha3 -
-  alpha2) > 0 ;*/
-  return fixZero((a - point).crossProduct(b - point)) > 0 &&
-         fixZero((b - point).crossProduct(c - point)) > 0;
-}
-
-// 2 - should skip edge
 // 1 - intersection but not on edge or point
 //-1 - we are on edge
 //-2 - we are on point
@@ -32,7 +15,7 @@ inline bool insideAngle(Vector2 &a, Vector2 &b, Vector2 &c, Vector2 &point) {
 Vector2 intersection(double x0, double x1, double y0, double y1, Vector2 p,
                      int *flag) {
   Vector2 res;
-  // TODO: == => fixzero
+  
   if (fixZero(p.x - x0) == 0 && fixZero(p.y - y0) == 0 ||
       fixZero(p.x - x1) == 0 && fixZero(p.y - y1) == 0) {
     *flag = -2;
@@ -42,7 +25,7 @@ Vector2 intersection(double x0, double x1, double y0, double y1, Vector2 p,
   }
   if (fixZero(x0 - x1) == 0) {
     if (fixZero(x0 - p.x) != 0) {
-      *flag = 2;
+      *flag = 0;
       return res;
     }
     if (y0 > y1)
@@ -63,7 +46,7 @@ Vector2 intersection(double x0, double x1, double y0, double y1, Vector2 p,
     res.x = p.x;
     res.y = y + y0;
     *flag = 1;
-    if (fixZero(p.y - res.y) == 0 && fixZero(p.x - res.x))
+    if (fixZero(p.y - res.y) == 0 && fixZero(p.x - res.x) == 0)
       *flag = -1;
     return res;
   }
