@@ -16,14 +16,19 @@ int main() {
   SimpleGraphGenerator sgraphGenerator;
   SimplePathBuilder spathBuilder;
   SimpleGridGenerator sgridGenerator;
-  std::vector<Vector2> circuit = {Vector2(0, 0), Vector2(2, -1), Vector2(1, 0),
-                                  Vector2(2, 2), Vector2(0, 0)};
-  double radius = 10;
+  std::vector<Vector2> circuit = { Vector2(0, 0), Vector2(15, -1), Vector2(17, 5),
+                                  Vector2(20, 13), Vector2(16, 10), Vector2(7, 18), Vector2(4, 20)};
+  double radius = 5;
   // run(circuit, &sgridGenerator, &sgraphGenerator, &spathBuilder, &srenderer,
   // radius);
-  Vector2 inside(0.5, 0), outside(1.2, 0.1);
+  Vector2 inside(10,5), outside(16,16);
   int expectedTrue = contains(circuit, inside),
       expectedFalse = contains(circuit, outside);
-  cout << expectedTrue << " " << expectedFalse;
+  cout << expectedTrue << " " << expectedFalse<<'\n';
+
+  vector<Vector2> grid = sgridGenerator.generateGrid(circuit, radius);
+  for (size_t i = 0; i < grid.size(); i++) {
+	  cout << grid[i].x << " " << grid[i].y << '\n';
+  }
   return 0;
 }

@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controller",
+    "\\Controller\\GraphGenerator",
+    "\\Controller\\GridGenerator"
+  ],
+  "SelectedNode": "\\Controller\\GraphGenerator\\SimpleGraphGenerator.cpp",
+  "PreviewInSolutionExplorer": false
+}
