@@ -1,3 +1,4 @@
 ./cleaner/Debug/*
 ./cleaner/build/*
 *.cache*
+*build*

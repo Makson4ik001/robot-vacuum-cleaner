@@ -7,7 +7,8 @@
 void run(std::vector<Vector2> circuit, GridGenerator* gridGenerator, GraphGenerator* graphGenerator, 
 	PathBuilder *pathBuilder, Renderer *renderer, double radius) {
 	std::vector<Vector2> baseGrid = gridGenerator->generateGrid(circuit, radius);
-	std::vector<std::vector<double>> graph = graphGenerator->generateGraph(baseGrid, radius);
-	std::vector<std::pair<size_t, double>> path = pathBuilder->findPath(graph);
+	auto graph = graphGenerator->generateGraph(baseGrid, circuit, radius);
+	size_t nodeToBegin = 0;
+	std::vector<Vector2> path = pathBuilder->findPath(graph.first, 0, graph.second);
 	renderer->render(path, baseGrid, radius);
 }

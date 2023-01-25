@@ -44,3 +44,7 @@ std::ostream &operator<<(std::ostream &out, Vector2 v) {
   out << "{ x: " << v.x << ", y: " << v.y << " }";
   return out;
 }
+
+bool Vector2::operator==(Vector2 const & other ){
+	return x == other.x && y == other.y;
+}

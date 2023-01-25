@@ -3,6 +3,6 @@
 
 class SimpleRenderer : public Renderer {
 public:
-  void render(std::vector<std::pair<size_t, double>> const &path,
+  void render(std::vector<Vector2> const &path,
               std::vector<Vector2> const &grid, double raduis) override;
 };

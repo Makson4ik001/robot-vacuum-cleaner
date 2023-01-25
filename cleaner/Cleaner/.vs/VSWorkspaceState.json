@@ -3,8 +3,9 @@
     "",
     "\\Controller",
     "\\Controller\\GraphGenerator",
-    "\\Controller\\GridGenerator"
+    "\\Controller\\GridGenerator",
+    "\\Vector2"
   ],
-  "SelectedNode": "\\Controller\\GraphGenerator\\SimpleGraphGenerator.cpp",
+  "SelectedNode": "\\Render",
   "PreviewInSolutionExplorer": false
 }
